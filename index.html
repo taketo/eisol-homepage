@@ -221,7 +221,7 @@
         /* Services */
         .services {
             background: white;
-            margin: 2rem;
+            margin: 2rem auto;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
@@ -284,7 +284,7 @@
         .about {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
-            margin: 2rem;
+            margin: 2rem auto;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
@@ -335,7 +335,7 @@
         /* Contact */
         .contact {
             background: white;
-            margin: 2rem;
+            margin: 2rem auto;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
@@ -382,6 +382,11 @@
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
         }
 
         /* Footer */
@@ -495,27 +500,30 @@
     <section id="contact" class="contact fade-in">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
-            <form class="contact-form">
+            <!-- ▼▼▼ ここを修正しました ▼▼▼ -->
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/mvgrblaz" method="POST">
                 <div class="form-group">
-                    <input type="text" placeholder="お名前" required>
+                    <input type="text" name="name" placeholder="お名前" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="メールアドレス" required>
+                    <input type="email" name="email" placeholder="メールアドレス" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="会社名">
+                    <input type="text" name="company" placeholder="会社名">
                 </div>
                 <div class="form-group">
-                    <textarea rows="5" placeholder="お問い合わせ内容"></textarea>
+                    <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">送信する</button>
+                <p id="form-status" style="margin-top: 1rem; text-align: center; font-weight: bold;"></p>
             </form>
+            <!-- ▲▲▲ ここまで ▲▲▲ -->
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 EISOL合同会社. All rights reserved.</p>
+            <p>© 2025 EISOL合同会社. All rights reserved.</p>
         </div>
     </footer>
 
@@ -564,11 +572,52 @@
             }
         });
 
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        // Form submission (Using AJAX with Formspree)
+        const form = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitButton = form.querySelector('.submit-btn');
+
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('お問い合わせありがとうございます。担当者より折り返しご連絡いたします。');
-            this.reset();
+            
+            const formData = new FormData(form);
+            const originalButtonText = submitButton.innerHTML;
+
+            // 送信中の表示
+            submitButton.disabled = true;
+            submitButton.innerHTML = '送信中...';
+            formStatus.innerHTML = '';
+            formStatus.style.color = '';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+                if (response.ok) {
+                    // 成功した場合
+                    formStatus.innerHTML = "お問い合わせありがとうございます。担当者より折り返しご連絡いたします。";
+                    formStatus.style.color = '#2ecc71'; // 緑色
+                    form.reset();
+                } else {
+                    // サーバー側で問題が発生した場合
+                    response.json().then(data => {
+                        const errorMessage = data.errors ? data.errors.map(error => error.message).join(', ') : "エラーが発生しました。時間をおいて再度お試しください。";
+                        formStatus.innerHTML = errorMessage;
+                        formStatus.style.color = '#e74c3c'; // 赤色
+                    })
+                }
+            }).catch(error => {
+                // ネットワークエラーなど
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+                formStatus.innerHTML = "エラーが発生しました。ネットワーク接続を確認してください。";
+                formStatus.style.color = '#e74c3c'; // 赤色
+            });
         });
 
         // Add interactive hover effects to service cards
