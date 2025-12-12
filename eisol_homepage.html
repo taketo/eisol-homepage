@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="英智ソリューションズ合同会社（ブランド名：EISOL）は、生成AIと最先端の機械学習技術を活用し、企業の意思決定と業務プロセスを革新するAIスタートアップです。">
-    <title>EISOL - Generative AI & MLOps Solutions</title>
+    <meta name="description" content="EISOL - 一人ひとりの心に寄り添い、AIで育む、子供たちの未来。">
+    <title>EISOL - 心を育む、未来をつくる。</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --primary: #4285F4; /* Google Blue inspired */
-            --secondary: #AA00FF; /* Deep Purple for AI vibe */
-            --accent: #00E5FF; /* Cyan for tech accents */
-            --dark-bg: #0a0e17;
-            --text-light: #f0f2f5;
-            --text-gray: #a0aec0;
+            --primary: #e67e22;
+            /* Warm Orange */
+            --primary-light: #f39c12;
+            --secondary: #d35400;
+            --text-dark: #5d4037;
+            /* Warm Brown */
+            --text-gray: #8d6e63;
+            --bg-cream: #fcfbf9;
+            /* Cream Paper */
+            --bg-warm: #f5f0e6;
+            --accent-yellow: #f1c40f;
         }
 
         * {
@@ -22,780 +32,378 @@
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-            line-height: 1.6;
-            color: var(--text-light);
-            background-color: var(--dark-bg);
-            overflow-x: hidden;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            /* Round, gentle font */
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Dynamic Background */
-        .bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 50% 50%, #1a202c 0%, #000000 100%);
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.2rem 0;
-            background: rgba(10, 14, 23, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
+        /* Navigation */
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            background: rgba(252, 251, 249, 0.95);
+            /* backdrop-filter: blur(5px); */
+            z-index: 1000;
+            /* border-bottom: 1px solid rgba(141, 110, 99, 0.1); */
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(90deg, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .logo::after {
-            content: 'AI LABS';
-            font-size: 0.8rem;
-            background: rgba(66, 133, 244, 0.2);
-            color: var(--primary);
-            padding: 2px 8px;
-            border-radius: 4px;
-            border: 1px solid rgba(66, 133, 244, 0.4);
-        }
-
         .nav-links {
             display: flex;
-            list-style: none;
             gap: 2.5rem;
+            list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-light);
+            color: var(--text-dark);
             font-weight: 500;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            height: 100vh;
+            height: 95vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            padding: 0 5%;
             position: relative;
-            padding-top: 60px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./assets/warm_hero.png') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            filter: brightness(0.9);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
         }
 
         .hero-content {
-            max-width: 900px;
             z-index: 2;
-            padding: 0 20px;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-            animation: fadeInDown 0.8s ease-out;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(93, 64, 55, 0.1);
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
+            font-size: 2.8rem;
+            line-height: 1.4;
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            animation: fadeInUp 1s ease-out;
+            color: var(--text-dark);
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
+            color: var(--text-dark);
             margin-bottom: 2.5rem;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .cta-button {
-            padding: 16px 40px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(66, 133, 244, 0.4);
-        }
-
-        .cta-button.outline {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-button.outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #fff;
-        }
-
-        /* Sections */
-        section {
-            padding: 8rem 0;
-            max-width: 1200px;
+        /* Thought/Vision Section */
+        .vision {
+            padding: 8rem 5%;
+            text-align: center;
+            max-width: 900px;
             margin: 0 auto;
         }
 
+        .vision h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .vision p {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: left;
+            line-height: 2;
+        }
+
+        .handwritten-note {
+            font-family: 'Zen Maru Gothic', cursive;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            transform: rotate(-2deg);
+            display: inline-block;
+        }
+
+        /* Warm Features */
+        .features-section {
+            background-color: var(--bg-warm);
+            padding: 6rem 5%;
+        }
+
         .container {
-            padding: 0 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #fff, var(--text-gray));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-subtitle {
+        .section-header span {
             color: var(--primary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
+            font-weight: 700;
             display: block;
             margin-bottom: 0.5rem;
         }
 
-        /* Tech Core (New Section for Google Evaluation) */
-        .tech-core {
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+        }
+
+        .feature-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            margin-bottom: 4rem;
         }
 
-        .tech-visual {
-            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        .feature-img img {
+            width: 100%;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
+            /* Softer corners */
+            box-shadow: 0 15px 30px rgba(93, 64, 55, 0.08);
         }
 
-        .tech-visual::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent, var(--primary), transparent 30%);
-            animation: rotate 4s linear infinite;
-            opacity: 0.2;
-        }
-
-        @keyframes rotate { 100% { transform: rotate(360deg); } }
-
-        .tech-list {
-            list-style: none;
-        }
-
-        .tech-list li {
+        .feature-text h3 {
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            padding-left: 2rem;
+            color: var(--secondary);
+        }
+
+        .feature-list li {
+            list-style: none;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
             position: relative;
         }
 
-        .tech-list li::before {
-            content: '▹';
+        .feature-list li::before {
+            content: '●';
+            color: var(--primary-light);
             position: absolute;
             left: 0;
-            color: var(--accent);
-        }
-
-        .tech-list h4 {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #fff;
+            line-height: 1.5;
         }
 
-        .tech-list p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 3rem 2rem;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.06);
-            border-color: var(--primary);
-            box-shadow: 0 10px 40px -10px rgba(66, 133, 244, 0.2);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .service-card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        /* About & Values */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .value-box {
-            background: rgba(255,255,255,0.03);
-            padding: 2rem;
-            border-radius: 12px;
+        /* Technology Note */
+        .tech-note {
+            padding: 6rem 5%;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
+            background: #fff;
+            border-radius: 40px 40px 0 0;
+            margin-top: -40px;
         }
 
-        .value-box h4 {
-            color: var(--accent);
-            margin-bottom: 0.5rem;
+        .tech-note h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
         }
 
-        /* Contact Form */
-        .contact-wrapper {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            max-width: 700px;
-            margin: 0 auto;
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-        
-        .submit-btn:disabled {
-            background: #4a5568;
-            cursor: not-allowed;
-            transform: none;
+        .tag {
+            background: var(--bg-warm);
+            padding: 10px 24px;
+            border-radius: 50px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            border: 1px solid rgba(141, 110, 99, 0.1);
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 4rem 0 2rem;
-            background: #05070a;
-            margin-top: 4rem;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo {
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .footer-bottom {
+            background-color: #5d4037;
+            color: #f5f0e6;
+            padding: 4rem 5%;
             text-align: center;
-            color: #4a5568;
+        }
+
+        footer p {
             font-size: 0.9rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            opacity: 0.8;
         }
 
-        /* Utility */
-        .highlight {
-            color: var(--accent);
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .nav-links { display: none; }
-            .tech-core { grid-template-columns: 1fr; }
-            .values-grid { grid-template-columns: 1fr 1fr; }
-            .cta-group { flex-direction: column; }
+            .hero-content {
+                padding: 2rem;
+                width: 90%;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-img {
+                order: 1;
+            }
+
+            .feature-text {
+                order: 2;
+            }
         }
     </style>
 </head>
-<body>
-    <div class="bg-canvas" id="particles"></div>
 
-    <header>
-        <nav>
-            <div class="logo">EISOL</div>
-            <ul class="nav-links">
-                <li><a href="#tech">Core Tech</a></li>
-                <li><a href="#services">Solutions</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+<body>
+    <nav>
+        <div class="logo">EISOL</div>
+        <ul class="nav-links">
+            <li><a href="#vision">想い</a></li>
+            <li><a href="#lumisia">プロダクト</a></li>
+            <li><a href="#tech">技術</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>一人ひとりの「好き」を、<br>未来をつくる力に。</h1>
+            <p>
+                AIと一緒に、自分だけの物語を見つけにいこう。<br>
+                EISOLは、子供たちの心と好奇心に寄り添う<br>新しい学びの形をつくります。
+            </p>
+            <a href="#vision" class="btn">私たちの想い</a>
+        </div>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <span class="badge">Next-Gen AI Startup</span>
-            <h1>Generative AI for<br>Enterprise Scale</h1>
-            <p>
-                EISOLは、独自の大規模言語モデル(LLM)チューニングと<br>
-                高度なMLOps基盤により、企業のデジタルトランスフォーメーションを<br>
-                加速させるAIテクノロジーパートナーです。
-            </p>
-            <div class="cta-group">
-                <a href="#contact" class="cta-button">お問い合わせ</a>
-                <a href="#tech" class="cta-button outline">技術詳細を見る</a>
-            </div>
+    <section id="vision" class="vision">
+        <h2>「ありのまま」を伸ばす教育へ</h2>
+        <p>
+            すべての子どもたちには、それぞれの色があり、それぞれのペースがあります。<br>
+            これまでの「みんなと同じ」を求める教育から、<br>
+            一人ひとりの「心」に火をつける教育へ。
+        </p>
+        <p>
+            私たちは最先端のAI技術を使いますが、主役はあくまで「人」です。<br>
+            テクノロジーは、子供たちの想像力を優しく支える土壌でありたい。<br>
+            そんな温かい未来を、私たちは目指しています。
+        </p>
+        <div class="handwritten-note">
+            技術を、未来を生きる子供たちの「翼」に。
         </div>
     </section>
 
-    <!-- Core Technology: Googleの「AIスタートアップ」審査で最も重要なセクション -->
-    <section id="tech">
+    <section id="lumisia" class="features-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Our Advantage</span>
-                <h2 class="section-title">Core Technology</h2>
-                <p style="color:var(--text-gray)">独自技術とスケーラブルなクラウドアーキテクチャの融合</p>
+                <span>First Step</span>
+                <h2>心とつながる物語「Lumisia」</h2>
             </div>
-            
-            <div class="tech-core">
-                <div class="tech-visual">
-                    <!-- 抽象的なテックビジュアライゼーション（コード風） -->
-                    <div style="font-family: monospace; color: var(--accent); font-size: 0.9rem;">
-                        > initializing neural_network...<br>
-                        > loading weights from gs://eisol-core/v4...<br>
-                        > pipeline: RAG_optimization<br>
-                        > connecting to vertex_ai_endpoint...<br>
-                        > status: <span style="color:#00ff00">ONLINE</span><br>
-                        > processing_capacity: 10M tokens/sec
-                    </div>
+            <div class="feature-grid">
+                <div class="feature-img">
+                    <img src="./assets/warm_community.png" alt="Children Creating Together">
                 </div>
-                <div class="tech-text">
-                    <ul class="tech-list">
-                        <li>
-                            <h4>Generative AI & LLM Optimization</h4>
-                            <p>RAG（検索拡張生成）アーキテクチャと独自のファインチューニング手法を用い、業界特化型の高精度な言語モデルソリューションを構築。ハルシネーションを抑制し、実務で使える生成AIを提供します。</p>
-                        </li>
-                        <li>
-                            <h4>Cloud-Native MLOps</h4>
-                            <p>Google Cloud Platform (Vertex AI, GKE) を活用したスケーラブルな推論環境。学習からデプロイ、監視までのパイプラインを自動化し、継続的なモデル改善を実現します。</p>
-                        </li>
-                        <li>
-                            <h4>Predictive Analytics Engine</h4>
-                            <p>構造化・非構造化データを統合的に分析するマルチモーダルAIエンジンにより、高度な需要予測や異常検知を実現します。</p>
-                        </li>
+                <div class="feature-text">
+                    <h3>ただ読むだけでなく、<br>体験する絵本</h3>
+                    <p style="margin-bottom: 2rem; color: var(--text-dark);">
+                        子供の「ふとしたつぶやき」や「大好きなもの」から、<br>
+                        AIがその子だけのための物語を紡ぎ出します。<br>
+                        正解を教えるのではなく、好奇心の種をまく。<br>
+                        Lumisiaは、親子の時間をより豊かにするパートナーです。
+                    </p>
+                    <ul class="feature-list">
+                        <li>子供の感性に寄り添うストーリー生成</li>
+                        <li>安心して使える、優しさの設計（セーフティガード）</li>
+                        <li>想像を形にする楽しさを知る体験</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">What we do</span>
-                <h2 class="section-title">AI Solutions</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>AI Agent Development</h3>
-                    <p>自律的にタスクを遂行するAIエージェントの開発。カスタマーサポートの自動化から、複雑な社内ワークフローの自律実行までを支援。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🧠</div>
-                    <h3>Enterprise LLM Integration</h3>
-                    <p>セキュアな環境でのプライベートLLM構築支援。機密情報を保持したまま、社内ナレッジベースと対話可能なシステムを提供。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">☁️</div>
-                    <h3>Cloud AI Infrastructure</h3>
-                    <p>AIワークロードに最適化されたクラウドインフラの設計・構築。コスト効率とパフォーマンスを両立させたサーバーレスアーキテクチャの提案。</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="tech" class="tech-note">
+        <h3>見守るための技術</h3>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--text-dark);">
+            世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>
+            私たちは Google Cloud の力（Vertex AI, GKE）を借りて、<br>
+            安全で、途切れることのない温かいつながりを構築しています。
+        </p>
 
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Who we are</span>
-                <h2 class="section-title">About EISOL</h2>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 3rem;">
-                <p style="font-size: 1.1rem; color: #d1d5db;">
-                    英智ソリューションズ合同会社（ブランド名：EISOL）は、最先端のAI技術を社会実装することを目指すテクノロジースタートアップです。<br>
-                    私たちは単なる開発会社ではありません。ビジネスの本質的な課題を、<br>
-                    Generative AIという「Core Technology」で解決するイノベーションパートナーです。
-                </p>
-            </div>
-            <div class="values-grid">
-                <div class="value-box">
-                    <h4>Innovation</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-gray)">生成AIによる<br>価値創造</p>
-                </div>
-                <div class="value-box">
-                    <h4>Speed</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-gray)">アジャイルな<br>仮説検証</p>
-                </div>
-                <div class="value-box">
-                    <h4>Scalability</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-gray)">クラウドネイティブな<br>拡張性</p>
-                </div>
-                <div class="value-box">
-                    <h4>Security</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-gray)">エンタープライズ品質の<br>安全性</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Get Started</span>
-                <h2 class="section-title">Contact Us</h2>
-                <p style="color: var(--text-gray)">AI導入のご相談や技術的なPoCのご依頼はこちらから</p>
-            </div>
-            
-            <div class="contact-wrapper">
-                <form id="contact-form" action="https://formspree.io/f/mvgrblaz" method="POST">
-                    <div class="form-group">
-                        <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem;">お名前 <span style="color:var(--secondary)">*</span></label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem;">メールアドレス <span style="color:var(--secondary)">*</span></label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem;">会社名 / 所属</label>
-                        <input type="text" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem;">お問い合わせ内容 <span style="color:var(--secondary)">*</span></label>
-                        <textarea name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">送信する</button>
-                    <p id="form-status" style="margin-top: 1rem; text-align: center; font-weight: 600; font-size: 0.9rem;"></p>
-                </form>
-            </div>
+        <div class="tech-tags">
+            <span class="tag">Google Cloud</span>
+            <span class="tag">安全なAI</span>
+            <span class="tag">個別最適化</span>
+            <span class="tag">スケーラビリティ</span>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div style="margin-bottom: 1rem;">
-                    <div class="footer-logo">EISOL</div>
-                    <p style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 0.5rem;">運営：英智ソリューションズ合同会社</p>
-                    <p style="color: var(--text-gray); font-size: 0.9rem;">Empowering Business with Generative AI.</p>
-                </div>
-                <!-- Google for Startups審査用の信頼性向上要素 -->
-                <div>
-                    <p style="color: var(--text-gray); font-size: 0.8rem;">Core Tech:</p>
-                    <p style="color: #fff; font-size: 0.9rem;">Python / TensorFlow / Vertex AI / React</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Eichi Solutions LLC. All rights reserved.</p>
-            </div>
-        </div>
+        <p>運営：英智ソリューションズ合同会社 (EISOL LLC.)</p>
+        <p style="margin-top: 10px;">© 2025 EISOL. Building Future with Love & AI.</p>
     </footer>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s ease-out';
-            observer.observe(el);
-        });
-
-        // Form handling (Keeping original logic)
-        const form = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
-        const submitButton = form.querySelector('.submit-btn');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const originalButtonText = submitButton.innerHTML;
-
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'Sending...';
-            formStatus.innerHTML = '';
-
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
-                if (response.ok) {
-                    formStatus.innerHTML = "お問い合わせを受け付けました。";
-                    formStatus.style.color = '#4ade80';
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        const errorMessage = data.errors ? data.errors.map(error => error.message).join(', ') : "エラーが発生しました。";
-                        formStatus.innerHTML = errorMessage;
-                        formStatus.style.color = '#f87171';
-                    })
-                }
-            }).catch(error => {
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
-                formStatus.innerHTML = "ネットワークエラーが発生しました。";
-                formStatus.style.color = '#f87171';
-            });
-        });
-
-        // Simple tech particle effect
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const particleContainer = document.getElementById('particles');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        canvas.style.display = 'block';
-        particleContainer.appendChild(canvas);
-
-        let particles = [];
-        const particleCount = 60; // Less is more for professional look
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = 'rgba(66, 133, 244, 0.4)'; // Google Blue tint
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach((p, index) => {
-                p.update();
-                p.draw();
-                
-                // Draw connections (Neural network vibe)
-                for (let j = index; j < particles.length; j++) {
-                    const dx = p.x - particles[j].x;
-                    const dy = p.y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < 150) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(66, 133, 244, ${0.1 - distance/1500})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            });
-            requestAnimationFrame(animateParticles);
-        }
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initParticles();
-        });
-
-        initParticles();
-        animateParticles();
-    </script>
 </body>
+
 </html>
