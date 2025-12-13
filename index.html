@@ -291,39 +291,35 @@
             transform: translateY(-2px);
         }
 
+        .mobile-br {
+            display: none;
+        }
+
+        @media (min-width: 901px) {
+            .mobile-br {
+                display: inline;
+            }
+        }
+
         @media (max-width: 900px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
+                line-height: 1.5;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                line-height: 1.8;
             }
 
             .hero-content {
-                padding: 2rem;
-                width: 90%;
+                padding: 2rem 1.5rem;
+                width: 95%;
             }
 
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-img {
-                order: 1;
-            }
-
-            .feature-text {
-                order: 2;
-            }
-
-            nav {
-                padding: 1rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                gap: 1.2rem;
-                font-size: 0.9rem;
-                width: 100%;
-                justify-content: center;
+            /* Ensure text doesn't break awkwardly */
+            .ib {
+                display: inline-block;
             }
         }
     </style>
@@ -343,10 +339,14 @@
     <header class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>一人ひとりの「好き」を、<br>未来をつくる力に。</h1>
+            <h1>
+                <span class="ib">一人ひとりの「好き」を、</span><br class="mobile-br">
+                <span class="ib">未来をつくる力に。</span>
+            </h1>
             <p>
-                AIと一緒に、自分だけの物語を見つけにいこう。<br>
-                EISOLは、子供たちの心と好奇心に寄り添う<br>新しい学びの形をつくります。
+                <span class="ib">AIと一緒に、</span><span class="ib">自分だけの物語を見つけにいこう。</span><br class="mobile-br">
+                <span class="ib">EISOLは、</span><span class="ib">子供たちの心と好奇心に寄り添う</span><br class="mobile-br">
+                <span class="ib">新しい学びの形をつくります。</span>
             </p>
             <a href="#vision" class="btn">私たちの想い</a>
         </div>
