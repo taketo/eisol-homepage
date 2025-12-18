@@ -506,6 +506,45 @@
         </div>
     </section>
 
+    <section id="company" style="padding: 6rem 5%; background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="company_title">会社概要</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; border-top: 1px solid #ddd; text-align: left;">
+                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_name_label">会社名</dt>
+                    <dd style="width: 70%;" data-i18n="company_name_value">英智ソリューションズ合同会社 (EISOL LLC.)</dd>
+                </dl>
+                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_rep_label">代表者</dt>
+                    <dd style="width: 70%;" data-i18n="company_rep_value">田中丈登</dd>
+                </dl>
+                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_loc_label">所在地</dt>
+                    <dd style="width: 70%;" data-i18n="company_loc_value">東京都八王子市中野上町5-18-1</dd>
+                </dl>
+                <!-- ここが一番重要です -->
+                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_product_label">主要プロダクト</dt>
+                    <dd style="width: 70%;" data-i18n="company_product_desc">物語生成AIプラットフォーム <a
+                            href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a></dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせセクション（必須：ナビゲーションのリンク先） -->
+    <section id="contact" style="padding: 6rem 5%; background-color: var(--bg-warm); text-align: center;">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="contact_title">お問い合わせ</h2>
+            </div>
+            <p style="margin-bottom: 2rem;" data-i18n="contact_text">取材依頼、協業のご相談などお気軽にご連絡ください。</p>
+            <a href="mailto:contact@eisol.jp" class="btn" data-i18n="contact_btn">メールを送る</a>
+        </div>
+    </section>
+
     <footer>
         <p data-i18n="footer_company">運営：英智ソリューションズ合同会社 (EISOL LLC.)</p>
         <p style="margin-top: 10px;">© 2025 EISOL. Building Future with Love & AI.</p>
@@ -543,7 +582,19 @@
                 tech_tag_2: "安全なAI",
                 tech_tag_3: "個別最適化",
                 tech_tag_4: "スケーラビリティ",
-                footer_company: "運営：英智ソリューションズ合同会社 (EISOL LLC.)"
+                footer_company: "運営：英智ソリューションズ合同会社 (EISOL LLC.)",
+                company_title: "会社概要",
+                company_name_label: "会社名",
+                company_name_value: "英智ソリューションズ合同会社 (EISOL LLC.)",
+                company_rep_label: "代表者",
+                company_rep_value: "田中丈登",
+                company_loc_label: "所在地",
+                company_loc_value: "東京都八王子市中野上町5-18-1",
+                company_product_label: "主要プロダクト",
+                company_product_desc: '物語生成AIプラットフォーム <a href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a>',
+                contact_title: "お問い合わせ",
+                contact_text: "取材依頼、協業のご相談などお気軽にご連絡ください。",
+                contact_btn: "メールを送る"
             },
             en: {
                 nav_vision: "Vision",
@@ -575,7 +626,19 @@
                 tech_tag_2: "Safe AI",
                 tech_tag_3: "Personalized",
                 tech_tag_4: "Scalability",
-                footer_company: "Operated by: EISOL LLC."
+                footer_company: "Operated by: EISOL LLC.",
+                company_title: "Company Overview",
+                company_name_label: "Company Name",
+                company_name_value: "EISOL LLC.",
+                company_rep_label: "Representative",
+                company_rep_value: "Taketo Tanaka",
+                company_loc_label: "Location",
+                company_loc_value: "5-18-1 Nakanokamicho, Hachioji, Tokyo",
+                company_product_label: "Key Product",
+                company_product_desc: 'Story Generation AI Platform <a href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a>',
+                contact_title: "Contact",
+                contact_text: "Please feel free to contact us for interview requests or partnership consultations.",
+                contact_btn: "Send Email"
             }
         };
 
