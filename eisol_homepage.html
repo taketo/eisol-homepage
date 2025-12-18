@@ -8,7 +8,8 @@
     <title>EISOL - 心を育む、未来をつくる。</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Outfit:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <style>
         :root {
@@ -23,6 +24,49 @@
             /* Cream Paper */
             --bg-warm: #f5f0e6;
             --accent-yellow: #f1c40f;
+        }
+
+        /* Language Toggle Switch */
+        .lang-switch {
+            display: flex;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(141, 110, 99, 0.2);
+            border-radius: 20px;
+            padding: 2px;
+            margin-left: 1.5rem;
+            position: relative;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-gray);
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(230, 126, 34, 0.2);
+        }
+
+        /* English Font Adjustment */
+        body.en-font {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        body.en-font h1,
+        body.en-font h2,
+        body.en-font h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
         }
 
         * {
@@ -302,9 +346,19 @@
         }
 
         @media (max-width: 900px) {
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding-top: 150px;
+                /* Space for header */
+                padding-bottom: 4rem;
+                align-items: flex-start;
+            }
+
             .hero h1 {
                 font-size: 1.6rem;
                 line-height: 1.5;
+                margin-top: 2rem;
             }
 
             .hero p {
@@ -330,16 +384,22 @@
             }
 
             nav {
-                padding: 1rem;
+                padding: 0.8rem 1rem;
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0.5rem;
             }
 
             .nav-links {
-                gap: 1.2rem;
-                font-size: 0.9rem;
+                gap: 1rem;
+                font-size: 0.85rem;
                 width: 100%;
                 justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .lang-switch {
+                margin-left: 0;
+                margin-top: 0.2rem;
             }
 
             /* Ensure text doesn't break awkwardly */
@@ -354,43 +414,49 @@
     <nav>
         <div class="logo">EISOL</div>
         <ul class="nav-links">
-            <li><a href="#vision">想い</a></li>
-            <li><a href="#lumisia">プロダクト</a></li>
-            <li><a href="#tech">技術</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="#vision" data-i18n="nav_vision">想い</a></li>
+            <li><a href="#lumisia" data-i18n="nav_product">プロダクト</a></li>
+            <li><a href="#tech" data-i18n="nav_tech">技術</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">お問い合わせ</a></li>
         </ul>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLanguage('ja')">JP</button>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        </div>
     </nav>
 
     <header class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
             <h1>
-                <span class="ib">一人ひとりの「好き」を、</span><br class="mobile-br">
-                <span class="ib">未来をつくる力に。</span>
+                <span class="ib" data-i18n="hero_title_1">一人ひとりの「好き」を、</span><br class="mobile-br">
+                <span class="ib" data-i18n="hero_title_2">未来をつくる力に。</span>
             </h1>
             <p>
-                <span class="ib">AIと一緒に、</span><span class="ib">自分だけの物語を見つけにいこう。</span><br class="mobile-br">
-                <span class="ib">EISOLは、</span><span class="ib">子供たちの心と好奇心に寄り添う</span><br class="mobile-br">
-                <span class="ib">新しい学びの形をつくります。</span>
+                <span class="ib" data-i18n="hero_subtitle_1">AIと一緒に、</span><span class="ib"
+                    data-i18n="hero_subtitle_2">自分だけの物語を見つけにいこう。</span><br class="mobile-br">
+                <span class="ib" data-i18n="hero_desc_1">EISOLは、</span><span class="ib"
+                    data-i18n="hero_desc_2">子供たちの心と好奇心に寄り添う</span><br class="mobile-br">
+                <span class="ib" data-i18n="hero_desc_3">新しい学びの形をつくります。</span>
             </p>
-            <a href="#vision" class="btn">私たちの想い</a>
+            <a href="#vision" class="btn" data-i18n="hero_cta">私たちの想い</a>
         </div>
     </header>
 
     <section id="vision" class="vision">
-        <h2>「ありのまま」を伸ばす教育へ</h2>
-        <p>
+        <h2 data-i18n="vision_title">「ありのまま」を伸ばす教育へ</h2>
+        <p data-i18n="vision_text_1">
             すべての子どもたちには、それぞれの色があり、それぞれのペースがあります。<br>
             これまでの「みんなと同じ」を求める教育から、<br>
             一人ひとりの「心」に火をつける教育へ。
         </p>
-        <p>
+        <p data-i18n="vision_text_2">
             私たちは最先端のAI技術を使いますが、主役はあくまで「人」です。<br>
             テクノロジーは、子供たちの想像力を優しく支える土壌でありたい。<br>
             そんな温かい未来を、私たちは目指しています。
         </p>
         <div class="handwritten-note">
-            技術を、未来を生きる子供たちの「翼」に。
+            <span data-i18n="vision_handwritten">技術を、未来を生きる子供たちの「翼」に。</span>
         </div>
     </section>
 
@@ -398,51 +464,210 @@
         <div class="container">
             <div class="section-header">
                 <span>First Step</span>
-                <h2>心とつながる物語「Lumisia」</h2>
+                <h2 data-i18n="product_title">心とつながる物語「Lumisia」</h2>
             </div>
             <div class="feature-grid">
                 <div class="feature-img">
                     <img src="./assets/warm_community.png" alt="Children Creating Together">
                 </div>
                 <div class="feature-text">
-                    <h3>ただ読むだけでなく、<br>体験する絵本</h3>
-                    <p style="margin-bottom: 2rem; color: var(--text-dark);">
+                    <h3 data-i18n="product_subtitle">ただ読むだけでなく、<br>体験する絵本</h3>
+                    <p style="margin-bottom: 2rem; color: var(--text-dark);" data-i18n="product_desc">
                         子供の「ふとしたつぶやき」や「大好きなもの」から、<br>
                         AIがその子だけのための物語を紡ぎ出します。<br>
                         正解を教えるのではなく、好奇心の種をまく。<br>
                         Lumisiaは、親子の時間をより豊かにするパートナーです。
                     </p>
                     <ul class="feature-list">
-                        <li>子供の感性に寄り添うストーリー生成</li>
-                        <li>安心して使える、優しさの設計（セーフティガード）</li>
-                        <li>想像を形にする楽しさを知る体験</li>
+                        <li data-i18n="product_feature_1">子供の感性に寄り添うストーリー生成</li>
+                        <li data-i18n="product_feature_2">安心して使える、優しさの設計（セーフティガード）</li>
+                        <li data-i18n="product_feature_3">想像を形にする楽しさを知る体験</li>
                     </ul>
                     <a href="https://lumisia.world/" target="_blank" class="btn"
-                        style="margin-top: 1.5rem; background-color: #fff; color: var(--primary); border: 2px solid var(--primary);">Lumisiaの世界へ</a>
+                        style="margin-top: 1.5rem; background-color: #fff; color: var(--primary); border: 2px solid var(--primary);"
+                        data-i18n="product_cta">Lumisiaの世界へ</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="tech" class="tech-note">
-        <h3>見守るための技術</h3>
-        <p style="max-width: 600px; margin: 0 auto; color: var(--text-dark);">
+        <h3 data-i18n="tech_title">見守るための技術</h3>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--text-dark);" data-i18n="tech_desc">
             世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>
             私たちは AI の力を借りて、<br>
             安全で、途切れることのない温かいつながりを構築しています。
         </p>
 
         <div class="tech-tags">
-            <span class="tag">安全なAI</span>
-            <span class="tag">個別最適化</span>
-            <span class="tag">スケーラビリティ</span>
+            <span class="tag" data-i18n="tech_tag_2">安全なAI</span>
+            <span class="tag" data-i18n="tech_tag_3">個別最適化</span>
+            <span class="tag" data-i18n="tech_tag_4">スケーラビリティ</span>
+        </div>
+    </section>
+
+    <section id="company" style="padding: 6rem 5%; background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="company_title">会社概要</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; border-top: 1px solid #ddd; text-align: left;">
+                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_name_label">会社名</dt>
+                    <dd style="width: 70%;" data-i18n="company_name_value">英智ソリューションズ合同会社 (EISOL LLC.)</dd>
+                </dl>
+                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_rep_label">代表者</dt>
+                    <dd style="width: 70%;" data-i18n="company_rep_value">田中丈登</dd>
+                </dl>
+                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_loc_label">所在地</dt>
+                    <dd style="width: 70%;" data-i18n="company_loc_value">東京都八王子市中野上町5-18-1</dd>
+                </dl>
+                <!-- ここが一番重要です -->
+                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_product_label">主要プロダクト</dt>
+                    <dd style="width: 70%;" data-i18n="company_product_desc">物語生成AIプラットフォーム <a
+                            href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a></dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせセクション（必須：ナビゲーションのリンク先） -->
+    <section id="contact" style="padding: 6rem 5%; background-color: var(--bg-warm); text-align: center;">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="contact_title">お問い合わせ</h2>
+            </div>
+            <p style="margin-bottom: 2rem;" data-i18n="contact_text">取材依頼、協業のご相談などお気軽にご連絡ください。</p>
+            <a href="mailto:contact@eisol.jp" class="btn" data-i18n="contact_btn">メールを送る</a>
         </div>
     </section>
 
     <footer>
-        <p>運営：英智ソリューションズ合同会社 (EISOL LLC.)</p>
+        <p data-i18n="footer_company">運営：英智ソリューションズ合同会社 (EISOL LLC.)</p>
         <p style="margin-top: 10px;">© 2025 EISOL. Building Future with Love & AI.</p>
     </footer>
+
+    <script>
+        const translations = {
+            ja: {
+                nav_vision: "想い",
+                nav_product: "プロダクト",
+                nav_tech: "技術",
+                nav_contact: "お問い合わせ",
+                hero_title_1: "一人ひとりの「好き」を、",
+                hero_title_2: "未来をつくる力に。",
+                hero_subtitle_1: "AIと一緒に、",
+                hero_subtitle_2: "自分だけの物語を見つけにいこう。",
+                hero_desc_1: "EISOLは、",
+                hero_desc_2: "子供たちの心と好奇心に寄り添う",
+                hero_desc_3: "新しい学びの形をつくります。",
+                hero_cta: "私たちの想い",
+                vision_title: "「ありのまま」を伸ばす教育へ",
+                vision_text_1: "すべての子どもたちには、それぞれの色があり、それぞれのペースがあります。<br>これまでの「みんなと同じ」を求める教育から、<br>一人ひとりの「心」に火をつける教育へ。",
+                vision_text_2: "私たちは最先端のAI技術を使いますが、主役はあくまで「人」です。<br>テクノロジーは、子供たちの想像力を優しく支える土壌でありたい。<br>そんな温かい未来を、私たちは目指しています。",
+                vision_handwritten: "技術を、未来を生きる子供たちの「翼」に。",
+                product_title: "心とつながる物語「Lumisia」",
+                product_subtitle: "ただ読むだけでなく、<br>体験する絵本",
+                product_desc: "子供の「ふとしたつぶやき」や「大好きなもの」から、<br>AIがその子だけのための物語を紡ぎ出します。<br>正解を教えるのではなく、好奇心の種をまく。<br>Lumisiaは、親子の時間をより豊かにするパートナーです。",
+                product_feature_1: "子供の感性に寄り添うストーリー生成",
+                product_feature_2: "安心して使える、優しさの設計（セーフティガード）",
+                product_feature_3: "想像を形にする楽しさを知る体験",
+                product_cta: "Lumisiaの世界へ",
+                tech_title: "見守るための技術",
+                tech_desc: "世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>私たちは Google Cloud の力（Vertex AI, GKE）を借りて、<br>安全で、途切れることのない温かいつながりを構築しています。",
+                tech_tag_1: "Google Cloud",
+                tech_tag_2: "安全なAI",
+                tech_tag_3: "個別最適化",
+                tech_tag_4: "スケーラビリティ",
+                footer_company: "運営：英智ソリューションズ合同会社 (EISOL LLC.)",
+                company_title: "会社概要",
+                company_name_label: "会社名",
+                company_name_value: "英智ソリューションズ合同会社 (EISOL LLC.)",
+                company_rep_label: "代表者",
+                company_rep_value: "田中丈登",
+                company_loc_label: "所在地",
+                company_loc_value: "東京都八王子市中野上町5-18-1",
+                company_product_label: "主要プロダクト",
+                company_product_desc: '物語生成AIプラットフォーム <a href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a>',
+                contact_title: "お問い合わせ",
+                contact_text: "取材依頼、協業のご相談などお気軽にご連絡ください。",
+                contact_btn: "メールを送る"
+            },
+            en: {
+                nav_vision: "Vision",
+                nav_product: "Product",
+                nav_tech: "Technology",
+                nav_contact: "Contact",
+                hero_title_1: "Turning Every Passion",
+                hero_title_2: "Into Future Power.",
+                hero_subtitle_1: "Let's find ",
+                hero_subtitle_2: "your own story with AI.",
+                hero_desc_1: "EISOL creates ",
+                hero_desc_2: "a new form of learning that embraces",
+                hero_desc_3: "children's hearts and curiosity.",
+                hero_cta: "Our Vision",
+                vision_title: "Education for the \"Natural Self\"",
+                vision_text_1: "Every child has their own color and their own pace.<br>Moving away from education that seeks sameness,<br>to education that sparks the fire in each individual's heart.",
+                vision_text_2: "We use cutting-edge AI, but people remain the protagonists.<br>Technology should be the soil that gently supports children's imagination.<br>That is the warm future we aim for.",
+                vision_handwritten: "Technology as wings for children's future.",
+                product_title: "Stories Connecting Hearts \"Lumisia\"",
+                product_subtitle: "Picture Books to Experience,<br>Not Just Read",
+                product_desc: "From a child's \"murmurs\" and \"favorite things\",<br>AI spins a story just for them.<br>Not teaching answers, but sowing seeds of curiosity.<br>Lumisia is a partner enriching parent-child time.",
+                product_feature_1: "Story generation attuned to sensibilities",
+                product_feature_2: "Gentle design with safety guards",
+                product_feature_3: "Experience the joy of shaping imagination",
+                product_cta: "To the World of Lumisia",
+                tech_title: "Technology for Watching Over",
+                tech_desc: "To deliver \"personal teachers\" and \"magical picture books\" to children worldwide.<br>Leveraging Google Cloud (Vertex AI, GKE),<br>we build safe, uninterrupted, warm connections.",
+                tech_tag_1: "Google Cloud",
+                tech_tag_2: "Safe AI",
+                tech_tag_3: "Personalized",
+                tech_tag_4: "Scalability",
+                footer_company: "Operated by: EISOL LLC.",
+                company_title: "Company Overview",
+                company_name_label: "Company Name",
+                company_name_value: "EISOL LLC.",
+                company_rep_label: "Representative",
+                company_rep_value: "Taketo Tanaka",
+                company_loc_label: "Location",
+                company_loc_value: "5-18-1 Nakanokamicho, Hachioji, Tokyo",
+                company_product_label: "Key Product",
+                company_product_desc: 'Story Generation AI Platform <a href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a>',
+                contact_title: "Contact",
+                contact_text: "Please feel free to contact us for interview requests or partnership consultations.",
+                contact_btn: "Send Email"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            // Switch Text
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update Buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
+
+            // Apply Font Change (Outfit for English)
+            if (lang === 'en') {
+                document.body.classList.add('en-font');
+            } else {
+                document.body.classList.remove('en-font');
+            }
+        }
+    </script>
 </body>
 
 </html>
