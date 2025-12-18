@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EISOL - 一人ひとりの心に寄り添い、AIで育む、子供たちの未来。">
-    <title>EISOL - 心を育む、未来をつくる。</title>
+    <meta name="description" content="EISOL - 一人ひとりの心に寄り添い、AIで育む、子供たちの未来。英智ソリューションズ合同会社">
+    <title>EISOL - 英智ソリューションズ合同会社</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,14 +14,11 @@
     <style>
         :root {
             --primary: #e67e22;
-            /* Warm Orange */
             --primary-light: #f39c12;
             --secondary: #d35400;
             --text-dark: #5d4037;
-            /* Warm Brown */
             --text-gray: #8d6e63;
             --bg-cream: #fcfbf9;
-            /* Cream Paper */
             --bg-warm: #f5f0e6;
             --accent-yellow: #f1c40f;
         }
@@ -56,7 +53,6 @@
             box-shadow: 0 2px 8px rgba(230, 126, 34, 0.2);
         }
 
-        /* English Font Adjustment */
         body.en-font {
             font-family: 'Outfit', sans-serif;
             letter-spacing: 0.02em;
@@ -77,7 +73,6 @@
 
         body {
             font-family: 'Zen Maru Gothic', sans-serif;
-            /* Round, gentle font */
             background-color: var(--bg-cream);
             color: var(--text-dark);
             line-height: 1.8;
@@ -89,14 +84,13 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1.5rem 5%;
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: rgba(252, 251, 249, 0.95);
-            /* backdrop-filter: blur(5px); */
             z-index: 1000;
-            /* border-bottom: 1px solid rgba(141, 110, 99, 0.1); */
+            border-bottom: 1px solid rgba(141, 110, 99, 0.1);
         }
 
         .logo {
@@ -107,6 +101,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -129,7 +124,7 @@
 
         /* Hero */
         .hero {
-            height: 95vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -145,25 +140,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('./assets/warm_hero.png') no-repeat center center;
+            /* ↓ assetsがない場合でも背景色が出るようにしています */
+            background-color: var(--bg-warm);
+            background-image: url('./assets/warm_hero.png');
+            background-repeat: no-repeat;
+            background-position: center center;
             background-size: cover;
             z-index: -1;
-            filter: brightness(0.9);
-            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+            filter: brightness(0.95);
         }
 
         .hero-content {
             z-index: 2;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             padding: 3rem 4rem;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(93, 64, 55, 0.1);
+            box-shadow: 0 10px 40px rgba(93, 64, 55, 0.08);
             max-width: 800px;
+            margin-top: 4rem;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             line-height: 1.4;
             font-weight: 700;
             margin-bottom: 1.5rem;
@@ -176,7 +174,7 @@
             margin-bottom: 2.5rem;
         }
 
-        /* Thought/Vision Section */
+        /* Sections */
         .vision {
             padding: 8rem 5%;
             text-align: center;
@@ -193,7 +191,6 @@
 
         .vision p {
             font-size: 1.05rem;
-            color: var(--text-dark);
             margin-bottom: 2rem;
             text-align: left;
             line-height: 2;
@@ -204,11 +201,10 @@
             color: var(--primary);
             font-size: 1.2rem;
             margin-top: 2rem;
-            /* transform: rotate(-2deg); */
             display: inline-block;
+            font-weight: 700;
         }
 
-        /* Warm Features */
         .features-section {
             background-color: var(--bg-warm);
             padding: 6rem 5%;
@@ -229,6 +225,8 @@
             font-weight: 700;
             display: block;
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
         .section-header h2 {
@@ -246,8 +244,8 @@
         .feature-img img {
             width: 100%;
             border-radius: 20px;
-            /* Softer corners */
             box-shadow: 0 15px 30px rgba(93, 64, 55, 0.08);
+            background: #ddd;
         }
 
         .feature-text h3 {
@@ -272,13 +270,10 @@
             line-height: 1.5;
         }
 
-        /* Technology Note */
         .tech-note {
             padding: 6rem 5%;
             text-align: center;
             background: #fff;
-            border-radius: 40px 40px 0 0;
-            margin-top: -40px;
         }
 
         .tech-note h3 {
@@ -304,7 +299,6 @@
             border: 1px solid rgba(141, 110, 99, 0.1);
         }
 
-        /* Footer */
         footer {
             background-color: #5d4037;
             color: #f5f0e6;
@@ -317,7 +311,6 @@
             opacity: 0.8;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 16px 36px;
@@ -347,28 +340,19 @@
 
         @media (max-width: 900px) {
             .hero {
-                height: auto;
-                min-height: 100vh;
                 padding-top: 150px;
-                /* Space for header */
                 padding-bottom: 4rem;
                 align-items: flex-start;
             }
 
             .hero h1 {
                 font-size: 1.6rem;
-                line-height: 1.5;
-                margin-top: 2rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-                line-height: 1.8;
             }
 
             .hero-content {
                 padding: 2rem 1.5rem;
                 width: 95%;
+                margin-top: 2rem;
             }
 
             .feature-grid {
@@ -402,9 +386,14 @@
                 margin-top: 0.2rem;
             }
 
-            /* Ensure text doesn't break awkwardly */
             .ib {
                 display: inline-block;
+            }
+
+            .company-dt,
+            .company-dd {
+                width: 100% !important;
+                margin-bottom: 5px;
             }
         }
     </style>
@@ -412,7 +401,7 @@
 
 <body>
     <nav>
-        <div class="logo">EISOL</div>
+        <a href="#" class="logo">EISOL</a>
         <ul class="nav-links">
             <li><a href="#vision" data-i18n="nav_vision">想い</a></li>
             <li><a href="#lumisia" data-i18n="nav_product">プロダクト</a></li>
@@ -495,11 +484,12 @@
         <h3 data-i18n="tech_title">見守るための技術</h3>
         <p style="max-width: 600px; margin: 0 auto; color: var(--text-dark);" data-i18n="tech_desc">
             世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>
-            私たちは AI の力を借りて、<br>
+            私たちは Google Cloud (Vertex AI, GKE) の力を借りて、<br>
             安全で、途切れることのない温かいつながりを構築しています。
         </p>
 
         <div class="tech-tags">
+            <span class="tag">Google Cloud</span>
             <span class="tag" data-i18n="tech_tag_2">安全なAI</span>
             <span class="tag" data-i18n="tech_tag_3">個別最適化</span>
             <span class="tag" data-i18n="tech_tag_4">スケーラビリティ</span>
@@ -524,7 +514,6 @@
                     <dt style="width: 30%; font-weight: 700;" data-i18n="company_loc_label">所在地</dt>
                     <dd style="width: 70%;" data-i18n="company_loc_value">東京都八王子市中野上町5-18-1</dd>
                 </dl>
-                <!-- ここが一番重要です -->
                 <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
                     <dt style="width: 30%; font-weight: 700;" data-i18n="company_product_label">主要プロダクト</dt>
                     <dd style="width: 70%;" data-i18n="company_product_desc">物語生成AIプラットフォーム <a
@@ -534,7 +523,6 @@
         </div>
     </section>
 
-    <!-- お問い合わせセクション（必須：ナビゲーションのリンク先） -->
     <section id="contact" style="padding: 6rem 5%; background-color: var(--bg-warm); text-align: center;">
         <div class="container">
             <div class="section-header">
@@ -577,8 +565,7 @@
                 product_feature_3: "想像を形にする楽しさを知る体験",
                 product_cta: "Lumisiaの世界へ",
                 tech_title: "見守るための技術",
-                tech_desc: "世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>私たちは Google Cloud の力（Vertex AI, GKE）を借りて、<br>安全で、途切れることのない温かいつながりを構築しています。",
-                tech_tag_1: "Google Cloud",
+                tech_desc: "世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>私たちは Google Cloud (Vertex AI, GKE) の力を借りて、<br>安全で、途切れることのない温かいつながりを構築しています。",
                 tech_tag_2: "安全なAI",
                 tech_tag_3: "個別最適化",
                 tech_tag_4: "スケーラビリティ",
@@ -622,7 +609,6 @@
                 product_cta: "To the World of Lumisia",
                 tech_title: "Technology for Watching Over",
                 tech_desc: "To deliver \"personal teachers\" and \"magical picture books\" to children worldwide.<br>Leveraging Google Cloud (Vertex AI, GKE),<br>we build safe, uninterrupted, warm connections.",
-                tech_tag_1: "Google Cloud",
                 tech_tag_2: "Safe AI",
                 tech_tag_3: "Personalized",
                 tech_tag_4: "Scalability",
@@ -644,8 +630,6 @@
 
         function setLanguage(lang) {
             document.documentElement.lang = lang;
-
-            // Switch Text
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -653,14 +637,11 @@
                     el.innerHTML = translations[lang][key];
                 }
             });
-
-            // Update Buttons
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
 
-            // Apply Font Change (Outfit for English)
             if (lang === 'en') {
                 document.body.classList.add('en-font');
             } else {
