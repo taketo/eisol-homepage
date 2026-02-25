@@ -421,8 +421,8 @@
             <li><a href="#contact" data-i18n="nav_contact">お問い合わせ</a></li>
         </ul>
         <div class="lang-switch">
-            <button class="lang-btn active" onclick="setLanguage('ja')">JP</button>
-            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('ja')">JP</button>
+            <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
         </div>
     </nav>
 
@@ -509,12 +509,7 @@
             <div style="display: flex; flex-direction: column; align-items: center; gap: 3rem;">
                 <div
                     style="max-width: 800px; display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; justify-content: center;">
-                    <div
-                        style="width: 200px; height: 200px; border-radius: 20px; background-color: var(--bg-warm); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                        <img src="./assets/team_ceo.png" alt="Taketo Tanaka"
-                            style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.2);">
-                    </div>
-                    <div style="flex: 1; min-width: 300px;">
+                    <div style="flex: 1; min-width: 300px; text-align: center;">
                         <h3 style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.5rem;"
                             data-i18n="team_member1_name">田中 丈登</h3>
                         <p style="font-weight: 700; color: var(--primary); margin-bottom: 1.5rem;"
@@ -753,6 +748,11 @@
                 document.body.classList.remove('en-font');
             }
         }
+
+        // Default to English on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            setLanguage('en');
+        });
     </script>
 </body>
 
