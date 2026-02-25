@@ -416,6 +416,7 @@
         <ul class="nav-links">
             <li><a href="#vision" data-i18n="nav_vision">想い</a></li>
             <li><a href="#lumisia" data-i18n="nav_product">プロダクト</a></li>
+            <li><a href="#team" data-i18n="nav_team">チーム</a></li>
             <li><a href="#tech" data-i18n="nav_tech">技術</a></li>
             <li><a href="#contact" data-i18n="nav_contact">お問い合わせ</a></li>
         </ul>
@@ -483,9 +484,55 @@
                         <li data-i18n="product_feature_2">安心して使える、優しさの設計（セーフティガード）</li>
                         <li data-i18n="product_feature_3">想像を形にする楽しさを知る体験</li>
                     </ul>
+                    <div
+                        style="margin-top: 2rem; padding: 1.5rem; background: rgba(230, 126, 34, 0.05); border-radius: 15px; border: 1px dashed var(--primary);">
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;" data-i18n="product_stage_title">
+                            開発・提供ステージ</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-dark);" data-i18n="product_stage_desc">
+                            正式リリース済み。現在、日本国内のユーザー向けにサービスを提供しており、グローバル展開を準備中です。</p>
+                    </div>
                     <a href="https://lumisia.world/" target="_blank" class="btn"
                         style="margin-top: 1.5rem; background-color: #fff; color: var(--primary); border: 2px solid var(--primary);"
                         data-i18n="product_cta">Lumisiaの世界へ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" style="padding: 8rem 5%; background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <span data-i18n="nav_team">ABOUT US</span>
+                <h2 data-i18n="team_title">チーム</h2>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 3rem;">
+                <div
+                    style="max-width: 800px; display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; justify-content: center;">
+                    <div
+                        style="width: 200px; height: 200px; border-radius: 20px; background-color: var(--bg-warm); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <img src="./assets/team_ceo.png" alt="Taketo Tanaka"
+                            style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.2);">
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.5rem;"
+                            data-i18n="team_member1_name">田中 丈登</h3>
+                        <p style="font-weight: 700; color: var(--primary); margin-bottom: 1.5rem;"
+                            data-i18n="team_member1_role">創業者 & CEO</p>
+                        <p style="margin-bottom: 2rem; line-height: 1.8;" data-i18n="team_member1_bio">
+                            東京工業大学大学院
+                            理工学研究科修了（修士・工学）。AIおよびソフトウェア工学の専門家。大手企業でのシステム開発を経て、生成AIを活用したエドテック（教育×技術）の革新を目指し、英智ソリューションズ合同会社を設立。Lumisiaの全開発をリードする。
+                        </p>
+                        <a href="https://www.linkedin.com/in/taketo-tanaka-419b633a6/" target="_blank"
+                            style="display: inline-flex; align-items: center; gap: 10px; color: #0077B5; text-decoration: none; font-weight: 700; border: 1px solid #0077B5; padding: 10px 20px; border-radius: 50px; transition: all 0.3s;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            <span data-i18n="team_linkedin">LinkedIn プロフィール</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -568,6 +615,7 @@
             ja: {
                 nav_vision: "想い",
                 nav_product: "プロダクト",
+                nav_team: "チーム",
                 nav_tech: "技術",
                 nav_contact: "お問い合わせ",
                 hero_title_1: "一人ひとりの「好き」を、",
@@ -589,6 +637,13 @@
                 product_feature_2: "安心して使える、優しさの設計（セーフティガード）",
                 product_feature_3: "想像を形にする楽しさを知る体験",
                 product_cta: "Lumisiaの世界へ",
+                product_stage_title: "展開ステージ",
+                product_stage_desc: "正式リリース済み (Launched)。現在、日本国内のユーザー向けにサービスの提供および機能の拡張を継続しており、グローバル展開を準備中のデジタルトランスフォーメーション事業です。",
+                team_title: "私たちのチーム",
+                team_member1_name: "田中 丈登",
+                team_member1_role: "創業者 & CEO",
+                team_member1_bio: "東京工業大学大学院 理工学研究科修了（修士・工学）。AIおよびソフトウェア工学の専門家。大手企業でのシステム開発を経て、生成AIを活用したエドテック（教育×技術）の革新を目指し、英智ソリューションズ合同会社を設立。物語生成AI「Lumisia」のコア技術開発をリードするエンジニア起業家。",
+                team_linkedin: "LinkedIn プロフィール",
                 tech_title: "見守るための技術",
                 tech_desc: "世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>私たちは Google Cloud の力（Vertex AI, GKE）を借りて、<br>安全で、途切れることのない温かいつながりを構築しています。",
                 tech_tag_1: "Google Cloud",
@@ -617,6 +672,7 @@
             en: {
                 nav_vision: "Vision",
                 nav_product: "Product",
+                nav_team: "Team",
                 nav_tech: "Technology",
                 nav_contact: "Contact",
                 hero_title_1: "Turning Every Passion",
@@ -637,7 +693,14 @@
                 product_feature_1: "Story generation attuned to sensibilities",
                 product_feature_2: "Gentle design with safety guards",
                 product_feature_3: "Experience the joy of shaping imagination",
-                product_cta: "To the World of Lumisia",
+                product_cta: "Visit Lumisia",
+                product_stage_title: "Launch Stage",
+                product_stage_desc: "Fully Launched & Operational. Currently providing services across Japan. This is a digital-native platform designed for global scalability.",
+                team_title: "Meet Our Team",
+                team_member1_name: "Taketo Tanaka",
+                team_member1_role: "Founder & CEO",
+                team_member1_bio: "M.Eng. from Tokyo Institute of Technology. A specialist in AI and Software Engineering with extensive experience in leading technical projects. Founded EISOL as a tech startup to pioneer EdTech innovation through Generative AI. Leading the end-to-end development of Lumisia.",
+                team_linkedin: "LinkedIn Profile",
                 tech_title: "Technology for Watching Over",
                 tech_desc: "To deliver \"personal teachers\" and \"magical picture books\" to children worldwide.<br>Leveraging Google Cloud (Vertex AI, GKE),<br>we build safe, uninterrupted, warm connections.",
                 tech_tag_1: "Google Cloud",
