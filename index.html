@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EISOL - 一人ひとりの心に寄り添い、AIで育む、子供たちの未来。">
-    <title>EISOL - 心を育む、未来をつくる。</title>
+    <meta name="description" content="EISOL - キャラクターを通じて人と企業を支えるAIエージェントプラットフォーム。Lumisia / Lumisia for Businessを展開しています。">
+    <title>EISOL - キャラクターに、ことばを。</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,16 +14,13 @@
     <style>
         :root {
             --primary: #e67e22;
-            /* Warm Orange */
             --primary-light: #f39c12;
             --secondary: #d35400;
-            --text-dark: #5d4037;
-            /* Warm Brown */
-            --text-gray: #8d6e63;
+            --text-dark: #333333;
+            --text-gray: #666666;
             --bg-cream: #fcfbf9;
-            /* Cream Paper */
             --bg-warm: #f5f0e6;
-            --accent-yellow: #f1c40f;
+            --bg-gray: #f9f9f9;
         }
 
         /* Language Toggle Switch */
@@ -77,7 +74,6 @@
 
         body {
             font-family: 'Zen Maru Gothic', sans-serif;
-            /* Round, gentle font */
             background-color: var(--bg-cream);
             color: var(--text-dark);
             line-height: 1.8;
@@ -89,14 +85,13 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1.5rem 5%;
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: rgba(252, 251, 249, 0.95);
-            /* backdrop-filter: blur(5px); */
             z-index: 1000;
-            /* border-bottom: 1px solid rgba(141, 110, 99, 0.1); */
+            border-bottom: 1px solid rgba(141, 110, 99, 0.1);
         }
 
         .logo {
@@ -104,14 +99,12 @@
             font-weight: 700;
             color: var(--secondary);
             letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             list-style: none;
         }
 
@@ -145,7 +138,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('./assets/warm_hero.png') no-repeat center center;
+            background: url('./assets/hero_platform.jpg') no-repeat center center;
             background-size: cover;
             z-index: -1;
             filter: brightness(0.9);
@@ -155,11 +148,11 @@
 
         .hero-content {
             z-index: 2;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             padding: 3rem 4rem;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(93, 64, 55, 0.1);
-            max-width: 800px;
+            max-width: 900px;
         }
 
         .hero h1 {
@@ -174,9 +167,10 @@
             font-size: 1.1rem;
             color: var(--text-dark);
             margin-bottom: 2.5rem;
+            line-height: 1.8;
         }
 
-        /* Thought/Vision Section */
+        /* Vision Section */
         .vision {
             padding: 8rem 5%;
             text-align: center;
@@ -204,14 +198,21 @@
             color: var(--primary);
             font-size: 1.2rem;
             margin-top: 2rem;
-            /* transform: rotate(-2deg); */
             display: inline-block;
+            font-weight: 700;
         }
 
-        /* Warm Features */
+        /* Product Sections */
         .features-section {
-            background-color: var(--bg-warm);
             padding: 6rem 5%;
+        }
+
+        .bg-warm {
+            background-color: var(--bg-warm);
+        }
+        
+        .bg-white {
+            background-color: #fff;
         }
 
         .container {
@@ -242,12 +243,19 @@
             gap: 4rem;
             align-items: center;
         }
+        
+        .feature-grid.reverse .feature-img {
+            order: 2;
+        }
+        
+        .feature-grid.reverse .feature-text {
+            order: 1;
+        }
 
         .feature-img img {
             width: 100%;
             border-radius: 20px;
-            /* Softer corners */
-            box-shadow: 0 15px 30px rgba(93, 64, 55, 0.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
         }
 
         .feature-text h3 {
@@ -272,13 +280,44 @@
             line-height: 1.5;
         }
 
-        /* Technology Note */
+        /* Startup Programs */
+        .startups {
+            background-color: var(--bg-gray);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        
+        .startup-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .startup-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .startup-card h4 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Technology Tags */
         .tech-note {
             padding: 6rem 5%;
             text-align: center;
             background: #fff;
-            border-radius: 40px 40px 0 0;
-            margin-top: -40px;
         }
 
         .tech-note h3 {
@@ -293,21 +332,25 @@
             gap: 1rem;
             flex-wrap: wrap;
             margin-top: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .tag {
             background: var(--bg-warm);
             padding: 10px 24px;
             border-radius: 50px;
-            color: var(--text-gray);
-            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-weight: 500;
             border: 1px solid rgba(141, 110, 99, 0.1);
         }
 
         /* Footer */
         footer {
-            background-color: #5d4037;
-            color: #f5f0e6;
+            background-color: var(--text-dark);
+            color: var(--bg-warm);
             padding: 4rem 5%;
             text-align: center;
         }
@@ -328,11 +371,23 @@
             font-weight: 700;
             transition: all 0.3s;
             box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+            text-align: center;
         }
 
         .btn:hover {
             background-color: var(--secondary);
             transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--bg-warm);
+            color: var(--secondary);
         }
 
         .mobile-br {
@@ -350,15 +405,14 @@
                 height: auto;
                 min-height: 100vh;
                 padding-top: 150px;
-                /* Space for header */
                 padding-bottom: 4rem;
                 align-items: flex-start;
             }
 
             .hero h1 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 line-height: 1.5;
-                margin-top: 2rem;
+                margin-top: 1rem;
             }
 
             .hero p {
@@ -373,6 +427,15 @@
 
             .feature-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .feature-grid.reverse .feature-img {
+                order: 1;
+            }
+            
+            .feature-grid.reverse .feature-text {
+                order: 2;
             }
 
             .feature-img {
@@ -402,9 +465,16 @@
                 margin-top: 0.2rem;
             }
 
-            /* Ensure text doesn't break awkwardly */
             .ib {
                 display: inline-block;
+            }
+            
+            .dl-flex dt, .dl-flex dd {
+                width: 100% !important;
+            }
+            
+            .dl-flex dt {
+                margin-bottom: 0.5rem;
             }
         }
     </style>
@@ -412,17 +482,18 @@
 
 <body>
     <nav>
-        <div class="logo">EISOL</div>
+        <a href="#" class="logo">EISOL</a>
         <ul class="nav-links">
-            <li><a href="#vision" data-i18n="nav_vision">想い</a></li>
-            <li><a href="#lumisia" data-i18n="nav_product">プロダクト</a></li>
+            <li><a href="#vision" data-i18n="nav_vision">ビジョン</a></li>
+            <li><a href="#lumisia" data-i18n="nav_b2c">Lumisia (B2C)</a></li>
+            <li><a href="#business" data-i18n="nav_b2b">法人向け (B2B)</a></li>
             <li><a href="#team" data-i18n="nav_team">チーム</a></li>
-            <li><a href="#tech" data-i18n="nav_tech">技術</a></li>
-            <li><a href="#contact" data-i18n="nav_contact">お問い合わせ</a></li>
+            <li><a href="#tech" data-i18n="nav_tech">技術基盤</a></li>
+            <li><a href="#company" data-i18n="nav_company">会社概要</a></li>
         </ul>
         <div class="lang-switch">
-            <button class="lang-btn" onclick="setLanguage('ja')">JP</button>
-            <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn active" onclick="setLanguage('ja')">JP</button>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
         </div>
     </nav>
 
@@ -430,95 +501,164 @@
         <div class="hero-bg"></div>
         <div class="hero-content">
             <h1>
-                <span class="ib" data-i18n="hero_title_1">一人ひとりの「好き」を、</span><br class="mobile-br">
-                <span class="ib" data-i18n="hero_title_2">未来をつくる力に。</span>
+                <span class="ib" data-i18n="hero_title_1">テクノロジーに、</span><br class="mobile-br">
+                <span class="ib" data-i18n="hero_title_2">温もりと親しみを。</span>
             </h1>
             <p>
-                <span class="ib" data-i18n="hero_subtitle_1">AIと一緒に、</span><span class="ib"
-                    data-i18n="hero_subtitle_2">自分だけの物語を見つけにいこう。</span><br class="mobile-br">
-                <span class="ib" data-i18n="hero_desc_1">EISOLは、</span><span class="ib"
-                    data-i18n="hero_desc_2">子供たちの心と好奇心に寄り添う</span><br class="mobile-br">
-                <span class="ib" data-i18n="hero_desc_3">新しい学びの形をつくります。</span>
+                <span class="ib" data-i18n="hero_desc_1">AIエージェントプラットフォーム「Lumisia」を通じて、</span><br class="mobile-br">
+                <span class="ib" data-i18n="hero_desc_2">親子の学びと成長から、企業の顧客接点まで。</span><br class="mobile-br">
+                <span class="ib" data-i18n="hero_desc_3">温かいテクノロジーで人と社会を支えます。</span>
             </p>
-            <a href="#vision" class="btn" data-i18n="hero_cta">私たちの想い</a>
+            <a href="#vision" class="btn" data-i18n="hero_cta">EISOLのビジョン</a>
         </div>
     </header>
 
     <section id="vision" class="vision">
-        <h2 data-i18n="vision_title">「ありのまま」を伸ばす教育へ</h2>
+        <h2 data-i18n="vision_title">「ツール」ではなく、「親しみのあるパートナー」を</h2>
         <p data-i18n="vision_text_1">
-            すべての子どもたちには、それぞれの色があり、それぞれのペースがあります。<br>
-            これまでの「みんなと同じ」を求める教育から、<br>
-            一人ひとりの「心」に火をつける教育へ。
+            生成AIは強力ですが、そのままでは無機質で、誰もが気軽に使えるわけではありません。<br>
+            私たちは、親しみやすい「キャラクター」というインターフェースを通すことで、<br>
+            AIをただのツールから、子どもが心を開き、大人が気軽に頼れる「パートナー」へと変えます。
         </p>
         <p data-i18n="vision_text_2">
-            私たちは最先端のAI技術を使いますが、主役はあくまで「人」です。<br>
-            テクノロジーは、子供たちの想像力を優しく支える土壌でありたい。<br>
-            そんな温かい未来を、私たちは目指しています。
+            子どもの好奇心を引き出し、ともに考える B2C サービス「Lumisia」。<br>
+            そして、施設や地域の公式キャラクターに言葉を授け、人手不足とインバウンド対応を解決する B2B サービス「Lumisia for Business」。<br>
+            高度なAIを、世界で一番優しく、誰もが自然に使える形で社会に実装します。
         </p>
         <div class="handwritten-note">
-            <span data-i18n="vision_handwritten">技術を、未来を生きる子供たちの「翼」に。</span>
+            <span data-i18n="vision_handwritten">テクノロジーを、すべての人の「案内役」に。</span>
         </div>
     </section>
 
-    <section id="lumisia" class="features-section">
+    <!-- B2B Section (Lumisia for Business) -->
+    <section id="business" class="features-section bg-warm">
         <div class="container">
             <div class="section-header">
-                <span>First Step</span>
-                <h2 data-i18n="product_title">心とつながる物語「Lumisia」</h2>
+                <span>For Enterprise & Public Sectors</span>
+                <h2 data-i18n="b2b_title">法人・自治体向けAI接客基盤<br>「Lumisia for Business」</h2>
+            </div>
+            <div class="feature-grid reverse">
+                <div class="feature-text">
+                    <h3 data-i18n="b2b_subtitle">いつもの公式キャラクターが<br>多言語の案内役に</h3>
+                    <p style="margin-bottom: 2rem; color: var(--text-dark);" data-i18n="b2b_desc">
+                        施設や自治体の既存キャラクターを「作り変えず」に、20言語以上で対応可能なAI案内役へと拡張します。<br>
+                        駅構内図や遅延情報、テナント情報などをRAGで統合し、固有の正確な案内を実現。
+                    </p>
+                    <ul class="feature-list">
+                        <li data-i18n="b2b_feature_1">専用アプリ不要。スマホでQRを読み込むだけで即起動</li>
+                        <li data-i18n="b2b_feature_2">「有人窓口へ」と促すハルシネーション防止機能を標準装備</li>
+                        <li data-i18n="b2b_feature_3">人手不足とインバウンド対応の課題を同時に解決</li>
+                    </ul>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://biz.lumisia.world/ja/biz" target="_blank" class="btn" data-i18n="b2b_cta">法人向けサイトへ</a>
+                        <a href="mailto:biz@lumisia.world" class="btn btn-outline" data-i18n="b2b_contact_cta">導入のご相談</a>
+                    </div>
+                </div>
+                <div class="feature-img">
+                    <img src="./assets/b2b_mascot_guide.png" alt="Lumisia for Business - Multilingual Support" style="object-fit: cover; aspect-ratio: 4/3; background: #e0e0e0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2C Section (Lumisia) -->
+    <section id="lumisia" class="features-section bg-white">
+        <div class="container">
+            <div class="section-header">
+                <span>For Family & Kids</span>
+                <h2 data-i18n="b2c_title">親子向けAIフレンドプラットフォーム<br>「Lumisia」</h2>
             </div>
             <div class="feature-grid">
                 <div class="feature-img">
-                    <img src="./assets/warm_community.png" alt="Children Creating Together">
+                    <img src="./assets/warm_community.jpg" alt="Children Creating Together">
                 </div>
                 <div class="feature-text">
-                    <h3 data-i18n="product_subtitle">ただ読むだけでなく、<br>体験する絵本</h3>
-                    <p style="margin-bottom: 2rem; color: var(--text-dark);" data-i18n="product_desc">
-                        子供の「ふとしたつぶやき」や「大好きなもの」から、<br>
-                        AIがその子だけのための物語を紡ぎ出します。<br>
-                        正解を教えるのではなく、好奇心の種をまく。<br>
-                        Lumisiaは、親子の時間をより豊かにするパートナーです。
+                    <h3 data-i18n="b2c_subtitle">「好き」から広がる、<br>子どものためのAIパートナー</h3>
+                    <p style="margin-bottom: 2rem; color: var(--text-dark);" data-i18n="b2c_desc">
+                        子供の「大好きなもの」から、AIがその子だけの物語や学習体験を生成。<br>
+                        英語、算数、プログラミング的思考から感情のケアまで、39種類以上の専門AIフレンドが子供たちの思考力を育てます。
                     </p>
                     <ul class="feature-list">
-                        <li data-i18n="product_feature_1">子供の感性に寄り添うストーリー生成</li>
-                        <li data-i18n="product_feature_2">安心して使える、優しさの設計（セーフティガード）</li>
-                        <li data-i18n="product_feature_3">想像を形にする楽しさを知る体験</li>
+                        <li data-i18n="b2c_feature_1">教え込むのではなく「問いかける」ソクラテス式問答法</li>
+                        <li data-i18n="b2c_feature_2">親が管理できるセーフティガードと利用時間制限</li>
+                        <li data-i18n="b2c_feature_3">世界同時に展開中のデジタルネイティブプラットフォーム</li>
                     </ul>
-                    <a href="https://lumisia.world/" target="_blank" class="btn"
-                        style="margin-top: 1.5rem; background-color: #fff; color: var(--primary); border: 2px solid var(--primary);"
-                        data-i18n="product_cta">Lumisiaの世界へ</a>
+                    <a href="https://lumisia.world/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;" data-i18n="b2c_cta">Lumisiaの世界へ</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startup Programs -->
+    <section class="startups">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <span data-i18n="startup_label">Global Support</span>
+                <h2 data-i18n="startup_title">採択プログラム・パートナー</h2>
+                <p style="margin-top: 1rem;" data-i18n="startup_desc">Lumisiaの高度なAI基盤と事業展開は、世界的なテック企業による支援プログラムに採択されています。</p>
+            </div>
+            <div class="startup-grid">
+                <div class="startup-card">
+                    <h4 data-i18n="startup_nvidia">NVIDIA Inception</h4>
+                    <p data-i18n="startup_nvidia_desc" style="font-size: 0.9rem; color: var(--text-gray);">高度な生成AI技術の導入・開発支援</p>
+                </div>
+                <div class="startup-card">
+                    <h4 data-i18n="startup_google">Google for Startups</h4>
+                    <p data-i18n="startup_google_desc" style="font-size: 0.9rem; color: var(--text-gray);">グローバルなビジネス成長支援</p>
+                </div>
+                <div class="startup-card">
+                    <h4 data-i18n="startup_aws">AWS Activate</h4>
+                    <p data-i18n="startup_aws_desc" style="font-size: 0.9rem; color: var(--text-gray);">スケーラブルなクラウドインフラ構築支援</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="tech" class="tech-note">
+        <div class="container">
+            <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem; letter-spacing: 1px;" data-i18n="tech_label">TECHNOLOGY</span>
+            <h3 data-i18n="tech_title" style="margin-top: 0.5rem;">公共インフラを支える高度な技術基盤</h3>
+            <p style="max-width: 700px; margin: 0 auto; color: var(--text-dark);" data-i18n="tech_desc">
+                誰もが使いやすく、かつ公共空間でも安心して提供できる。<br>
+                私たちは直感的なUXと堅牢なバックエンドを両立する技術スタックを採用しています。
+            </p>
+            <div class="tech-tags">
+                <span class="tag">RAG (検索拡張生成)</span>
+                <span class="tag" data-i18n="tech_tag_lang">多言語対応 (20言語以上)</span>
+                <span class="tag" data-i18n="tech_tag_hallucination">ハルシネーション防止機能</span>
+                <span class="tag" data-i18n="tech_tag_safety">多層セーフガード設計</span>
+                <span class="tag" data-i18n="tech_tag_qr">アプリ不要のQR即時起動</span>
+                <span class="tag">Google Cloud / AWS</span>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section id="team" style="padding: 8rem 5%; background-color: #fff;">
+    <section id="team" style="padding: 6rem 5%; background-color: var(--bg-gray);">
         <div class="container">
             <div class="section-header">
-                <span data-i18n="nav_team">ABOUT US</span>
-                <h2 data-i18n="team_title">チーム</h2>
+                <span data-i18n="nav_team">TEAM</span>
+                <h2 data-i18n="team_title">チーム体制</h2>
+                <p style="margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="team_desc">
+                    スケーラブルな基盤開発力と、直感的な体験デザインの両輪で、迅速な社会実装を実現する少数精鋭のチームです。
+                </p>
             </div>
             <div style="display: flex; flex-direction: column; align-items: center; gap: 3rem;">
-                <div
-                    style="max-width: 800px; display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; justify-content: center;">
-                    <div style="flex: 1; min-width: 300px; text-align: center;">
-                        <h3 style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.5rem;"
-                            data-i18n="team_member1_name">田中 丈登</h3>
-                        <p style="font-weight: 700; color: var(--primary); margin-bottom: 1.5rem;"
-                            data-i18n="team_member1_role">創業者 & CEO</p>
-                        <p style="margin-bottom: 2rem; line-height: 1.8;" data-i18n="team_member1_bio">
-                            東京工業大学大学院
-                            理工学研究科修了（修士・工学）。AIおよびソフトウェア工学の専門家。生成AIを活用したエドテック（教育×技術）の革新を目指し、英智ソリューションズ合同会社を設立。Lumisiaの全開発をリードする。
+                <div style="max-width: 600px; display: flex; gap: 4rem; align-items: flex-start; flex-wrap: wrap; justify-content: center;">
+                    <!-- CEO/CTO -->
+                    <div style="flex: 1; min-width: 300px; background: #fff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <h3 style="font-size: 1.6rem; color: var(--secondary); margin-bottom: 0.5rem;" data-i18n="team_member1_name">田中 丈登</h3>
+                        <p style="font-weight: 700; color: var(--primary); margin-bottom: 1.5rem;" data-i18n="team_member1_role">創業者 / CEO & CTO</p>
+                        <p style="font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.8;" data-i18n="team_member1_bio">
+                            東京工業大学大学院 理工学研究科修了（修士・工学）。AIおよびソフトウェア工学の専門家。生成AIを活用した社会課題解決を目指しEISOLを設立。LumisiaのAI基盤およびクラウドインフラの全開発をリードするエンジニア起業家。
                         </p>
                         <a href="https://www.linkedin.com/in/taketo-tanaka-eisol" target="_blank"
-                            style="display: inline-flex; align-items: center; gap: 10px; color: #0077B5; text-decoration: none; font-weight: 700; border: 1px solid #0077B5; padding: 10px 20px; border-radius: 50px; transition: all 0.3s;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            style="display: inline-flex; align-items: center; gap: 10px; color: #0077B5; text-decoration: none; font-weight: 700; font-size: 0.9rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                             </svg>
-                            <span data-i18n="team_linkedin">LinkedIn プロフィール</span>
+                            <span data-i18n="team_linkedin">LinkedIn</span>
                         </a>
                     </div>
                 </div>
@@ -526,117 +666,130 @@
         </div>
     </section>
 
-    <section id="tech" class="tech-note">
-        <h3 data-i18n="tech_title">見守るための技術</h3>
-        <p style="max-width: 600px; margin: 0 auto; color: var(--text-dark);" data-i18n="tech_desc">
-            世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>
-            私たちは AI の力を借りて、<br>
-            安全で、途切れることのない温かいつながりを構築しています。
-        </p>
-
-        <div class="tech-tags">
-            <span class="tag" data-i18n="tech_tag_2">安全なAI</span>
-            <span class="tag" data-i18n="tech_tag_3">個別最適化</span>
-            <span class="tag" data-i18n="tech_tag_4">スケーラビリティ</span>
-        </div>
-    </section>
-
+    <!-- Company -->
     <section id="company" style="padding: 6rem 5%; background-color: #fff;">
         <div class="container">
             <div class="section-header">
                 <h2 data-i18n="company_title">会社概要</h2>
             </div>
             <div style="max-width: 800px; margin: 0 auto; border-top: 1px solid #ddd; text-align: left;">
-                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                <dl class="dl-flex" style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
                     <dt style="width: 30%; font-weight: 700;" data-i18n="company_name_label">会社名</dt>
                     <dd style="width: 70%;" data-i18n="company_name_value">英智ソリューションズ合同会社 (EISOL LLC)</dd>
                 </dl>
-                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                <dl class="dl-flex" style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
                     <dt style="width: 30%; font-weight: 700;" data-i18n="company_rep_label">代表者</dt>
                     <dd style="width: 70%;" data-i18n="company_rep_value">田中丈登</dd>
                 </dl>
-                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
+                <dl class="dl-flex" style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
                     <dt style="width: 30%; font-weight: 700;" data-i18n="company_loc_label">所在地</dt>
                     <dd style="width: 70%;" data-i18n="company_loc_value">東京都八王子市中野上町5-18-1</dd>
                 </dl>
-                <!-- ここが一番重要です -->
-                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
-                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_product_label">主要プロダクト</dt>
-                    <dd style="width: 70%;" data-i18n="company_product_desc">物語生成AIプラットフォーム <a
-                            href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a></dd>
-                </dl>
-                <dl style="display: flex; flex-wrap: wrap; padding: 1.5rem 0; border-bottom: 1px solid #ddd;">
-                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_phone_label">電話番号</dt>
-                    <dd style="width: 70%;" data-i18n="company_phone_value">070-1480-3872</dd>
+                <dl class="dl-flex" style="display: flex; flex-wrap: wrap; padding: 1.5rem 0;">
+                    <dt style="width: 30%; font-weight: 700;" data-i18n="company_product_label">主要事業</dt>
+                    <dd style="width: 70%;">
+                        AIエージェントプラットフォームの企画・開発・運営<br>
+                        <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--primary);">
+                            <li><a href="https://lumisia.world" target="_blank" style="color: inherit; text-decoration: none;">親子向け AIフレンド Lumisia</a></li>
+                            <li><a href="https://biz.lumisia.world/ja/biz" target="_blank" style="color: inherit; text-decoration: none;">法人向け Lumisia for Business</a></li>
+                        </ul>
+                    </dd>
                 </dl>
             </div>
         </div>
     </section>
 
-    <!-- お問い合わせセクション（必須：ナビゲーションのリンク先） -->
+    <!-- Contact -->
     <section id="contact" style="padding: 6rem 5%; background-color: var(--bg-warm); text-align: center;">
         <div class="container">
             <div class="section-header">
                 <h2 data-i18n="contact_title">お問い合わせ</h2>
             </div>
-            <p style="margin-bottom: 2rem;" data-i18n="contact_text">取材依頼、協業のご相談などお気軽にご連絡ください。</p>
-            <a href="mailto:contact@eisol.jp" class="btn" data-i18n="contact_btn">メールを送る</a>
+            <p style="margin-bottom: 2rem;" data-i18n="contact_text">取材依頼、実証実験、協業のご相談などお気軽にご連絡ください。</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="mailto:tanaka@lumisia.world" class="btn" data-i18n="contact_btn_general">総合・協業のお問い合わせ</a>
+                <a href="mailto:biz@lumisia.world" class="btn btn-outline" data-i18n="contact_btn_biz">法人向け導入のご相談</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-links"
-            style="margin-bottom: 1.5rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+        <div style="margin-bottom: 1.5rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
             <a href="https://lumisia.world/legal/terms" target="_blank" data-i18n="footer_terms"
-                style="color: #f5f0e6; text-decoration: none; opacity: 0.9; border-bottom: 1px solid transparent; transition: border-color 0.2s;">利用規約</a>
+                style="color: var(--bg-warm); text-decoration: none; opacity: 0.9; border-bottom: 1px solid transparent; transition: border-color 0.2s;">利用規約</a>
             <a href="https://lumisia.world/legal/privacy" target="_blank" data-i18n="footer_privacy"
-                style="color: #f5f0e6; text-decoration: none; opacity: 0.9; border-bottom: 1px solid transparent; transition: border-color 0.2s;">プライバシーポリシー</a>
+                style="color: var(--bg-warm); text-decoration: none; opacity: 0.9; border-bottom: 1px solid transparent; transition: border-color 0.2s;">プライバシーポリシー</a>
             <a href="https://lumisia.world/legal/tokutei" target="_blank" data-i18n="footer_tokutei"
-                style="color: #f5f0e6; text-decoration: none; opacity: 0.9; border-bottom: 1px solid transparent; transition: border-color 0.2s;">特定商取引法に基づく表記</a>
+                style="color: var(--bg-warm); text-decoration: none; opacity: 0.9; border-bottom: 1px solid transparent; transition: border-color 0.2s;">特定商取引法に基づく表記</a>
         </div>
         <p data-i18n="footer_company">運営：英智ソリューションズ合同会社 (EISOL LLC)</p>
-        <p style="margin-top: 10px;">© 2026 EISOL LLC</p>
+        <p style="margin-top: 10px;">© 2026 EISOL LLC. All rights reserved.</p>
     </footer>
 
     <script>
         const translations = {
             ja: {
-                nav_vision: "想い",
-                nav_product: "プロダクト",
+                nav_vision: "ビジョン",
+                nav_b2c: "Lumisia (B2C)",
+                nav_b2b: "法人向け (B2B)",
                 nav_team: "チーム",
-                nav_tech: "技術",
-                nav_contact: "お問い合わせ",
-                hero_title_1: "一人ひとりの「好き」を、",
-                hero_title_2: "未来をつくる力に。",
-                hero_subtitle_1: "AIと一緒に、",
-                hero_subtitle_2: "自分だけの物語を見つけにいこう。",
-                hero_desc_1: "EISOLは、",
-                hero_desc_2: "子供たちの心と好奇心に寄り添う",
-                hero_desc_3: "新しい学びの形をつくります。",
-                hero_cta: "私たちの想い",
-                vision_title: "「ありのまま」を伸ばす教育へ",
-                vision_text_1: "すべての子どもたちには、それぞれの色があり、それぞれのペースがあります。<br>これまでの「みんなと同じ」を求める教育から、<br>一人ひとりの「心」に火をつける教育へ。",
-                vision_text_2: "私たちは最先端のAI技術を使いますが、主役はあくまで「人」です。<br>テクノロジーは、子供たちの想像力を優しく支える土壌でありたい。<br>そんな温かい未来を、私たちは目指しています。",
-                vision_handwritten: "技術を、未来を生きる子供たちの「翼」に。",
-                product_title: "心とつながる物語「Lumisia」",
-                product_subtitle: "ただ読むだけでなく、<br>体験する絵本",
-                product_desc: "子供の「ふとしたつぶやき」や「大好きなもの」から、<br>AIがその子だけのための物語を紡ぎ出します。<br>既に正式リリース済みであり、多言語対応のデジタルネイティブなプラットフォームとして世界同時に展開しています。<br>正解を教えるのではなく、好奇心の種をまく。<br>Lumisiaは、世界中の親子の時間をより豊かにするパートナーです。",
-                product_feature_1: "子供の感性に寄り添うストーリー生成",
-                product_feature_2: "安心して使える、優しさの設計（セーフティガード）",
-                product_feature_3: "想像を形にする楽しさを知る体験",
-                product_cta: "Lumisiaの世界へ",
-                team_title: "私たちのチーム",
+                nav_tech: "技術基盤",
+                nav_company: "会社概要",
+                
+                hero_title_1: "テクノロジーに、",
+                hero_title_2: "温もりと親しみを。",
+                hero_desc_1: "AIエージェントプラットフォーム「Lumisia」を通じて、",
+                hero_desc_2: "親子の学びと成長から、企業の顧客接点まで。",
+                hero_desc_3: "温かいテクノロジーで人と社会を支えます。",
+                hero_cta: "EISOLのビジョン",
+                
+                vision_title: "「ツール」ではなく、「親しみのあるパートナー」を",
+                vision_text_1: "生成AIは強力ですが、そのままでは無機質で、誰もが気軽に使えるわけではありません。<br>私たちは、親しみやすい「キャラクター」というインターフェースを通すことで、<br>AIをただのツールから、子どもが心を開き、大人が気軽に頼れる「パートナー」へと変えます。",
+                vision_text_2: "子どもの好奇心を引き出し、ともに考える B2C サービス「Lumisia」。<br>そして、施設や地域の公式キャラクターに言葉を授け、人手不足とインバウンド対応を解決する B2B サービス「Lumisia for Business」。<br>高度なAIを、世界で一番優しく、誰もが自然に使える形で社会に実装します。",
+                vision_handwritten: "テクノロジーを、すべての人の「案内役」に。",
+                
+                b2b_title: "法人・自治体向けAI接客基盤<br>「Lumisia for Business」",
+                b2b_subtitle: "いつもの公式キャラクターが<br>多言語の案内役に",
+                b2b_desc: "施設や自治体の既存キャラクターを「作り変えず」に、20言語以上で対応可能なAI案内役へと拡張します。<br>駅構内図や遅延情報、テナント情報などをRAGで統合し、固有の正確な案内を実現。",
+                b2b_feature_1: "専用アプリ不要。スマホでQRを読み込むだけで即起動",
+                b2b_feature_2: "「有人窓口へ」と促すハルシネーション防止機能を標準装備",
+                b2b_feature_3: "人手不足とインバウンド対応の課題を同時に解決",
+                b2b_cta: "法人向けサイトへ",
+                b2b_contact_cta: "導入のご相談",
+                
+                b2c_title: "親子向けAIフレンドプラットフォーム<br>「Lumisia」",
+                b2c_subtitle: "「好き」から広がる、子どものための<br>AIパートナー",
+                b2c_desc: "子供の「大好きなもの」から、AIがその子だけの物語や学習体験を生成。<br>英語、算数、プログラミング的思考から感情のケアまで、39種類以上の専門AIフレンドが子供たちの思考力を育てます。",
+                b2c_feature_1: "教え込むのではなく「問いかける」ソクラテス式問答法",
+                b2c_feature_2: "親が管理できるセーフティガードと利用時間制限",
+                b2c_feature_3: "世界同時に展開中のデジタルネイティブプラットフォーム",
+                b2c_cta: "Lumisiaの世界へ",
+                
+                startup_label: "Global Support",
+                startup_title: "採択プログラム・パートナー",
+                startup_desc: "Lumisiaの高度なAI基盤と事業展開は、世界的なテック企業による支援プログラムに採択されています。",
+                startup_nvidia: "NVIDIA Inception",
+                startup_nvidia_desc: "高度な生成AI技術の導入・開発支援",
+                startup_google: "Google for Startups",
+                startup_google_desc: "グローバルなビジネス成長支援",
+                startup_aws: "AWS Activate",
+                startup_aws_desc: "スケーラブルなクラウドインフラ構築支援",
+                
+                tech_label: "TECHNOLOGY",
+                tech_title: "公共インフラを支える高度な技術基盤",
+                tech_desc: "誰もが使いやすく、かつ公共空間でも安心して提供できる。<br>私たちは直感的なUXと堅牢なバックエンドを両立する技術スタックを採用しています。",
+                tech_tag_lang: "多言語対応 (20言語以上)",
+                tech_tag_hallucination: "ハルシネーション防止機能",
+                tech_tag_safety: "多層セーフガード設計",
+                tech_tag_qr: "アプリ不要のQR即時起動",
+                
+                team_title: "チーム体制",
+                team_desc: "スケーラブルな基盤開発力と、直感的な体験デザインの両輪で、迅速な社会実装を実現する少数精鋭のチームです。",
                 team_member1_name: "田中 丈登",
-                team_member1_role: "創業者 & CEO",
-                team_member1_bio: "東京工業大学大学院 理工学研究科修了（修士・工学）。AIおよびソフトウェア工学の専門家。生成AIを活用したエドテック（教育×技術）の革新を目指し、英智ソリューションズ合同会社を設立。物語生成AI「Lumisia」のコア技術開発をリードするエンジニア起業家。",
-                team_linkedin: "LinkedIn プロフィール",
-                tech_title: "見守るための技術",
-                tech_desc: "世界中の子供たちに、いつでも「自分だけの先生」や「魔法の絵本」を届けるために。<br>私たちは Google Cloud の力（Vertex AI, GKE）を借りて、<br>安全で、途切れることのない温かいつながりを構築しています。",
-                tech_tag_1: "Google Cloud",
-                tech_tag_2: "安全なAI",
-                tech_tag_3: "個別最適化",
-                tech_tag_4: "スケーラビリティ",
-                footer_company: "運営：英智ソリューションズ合同会社 (EISOL LLC)",
+                team_member1_role: "創業者 / CEO & CTO",
+                team_member1_bio: "生成AIを活用した社会課題解決を目指しEISOLを設立。LumisiaのAI基盤およびクラウドインフラの全開発をリードするエンジニア起業家。",
+                team_linkedin: "LinkedIn",
+                
                 company_title: "会社概要",
                 company_name_label: "会社名",
                 company_name_value: "英智ソリューションズ合同会社 (EISOL LLC)",
@@ -644,54 +797,80 @@
                 company_rep_value: "田中丈登",
                 company_loc_label: "所在地",
                 company_loc_value: "東京都八王子市中野上町5-18-1",
-                company_product_label: "主要プロダクト",
-                company_product_desc: '物語生成AIプラットフォーム <a href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a>',
-                company_phone_label: "電話番号",
-                company_phone_value: "070-1480-3872",
+                company_product_label: "主要事業",
+                
                 contact_title: "お問い合わせ",
-                contact_text: "取材依頼、協業のご相談などお気軽にご連絡ください。",
-                contact_btn: "メールを送る",
+                contact_text: "取材依頼、実証実験、協業のご相談などお気軽にご連絡ください。",
+                contact_btn_general: "総合・協業のお問い合わせ",
+                contact_btn_biz: "法人向け導入のご相談",
+                
                 footer_privacy: "プライバシーポリシー",
                 footer_terms: "利用規約",
-                footer_tokutei: "特定商取引法に基づく表記"
+                footer_tokutei: "特定商取引法に基づく表記",
+                footer_company: "運営：英智ソリューションズ合同会社 (EISOL LLC)"
             },
             en: {
                 nav_vision: "Vision",
-                nav_product: "Product",
+                nav_b2c: "Lumisia (B2C)",
+                nav_b2b: "For Business (B2B)",
                 nav_team: "Team",
                 nav_tech: "Technology",
-                nav_contact: "Contact",
-                hero_title_1: "Turning Every Passion",
-                hero_title_2: "Into Future Power.",
-                hero_subtitle_1: "Let's find ",
-                hero_subtitle_2: "your own story with AI.",
-                hero_desc_1: "EISOL creates ",
-                hero_desc_2: "a new form of learning that embraces",
-                hero_desc_3: "children's hearts and curiosity.",
+                nav_company: "Company",
+                
+                hero_title_1: "Bringing Warmth to",
+                hero_title_2: "Technology.",
+                hero_desc_1: "Through our AI agent platform Lumisia,",
+                hero_desc_2: "we empower family learning and transform business customer experiences.",
+                hero_desc_3: "Supporting society with warm technology.",
                 hero_cta: "Our Vision",
-                vision_title: "Education for the \"Natural Self\"",
-                vision_text_1: "Every child has their own color and their own pace.<br>Moving away from education that seeks sameness,<br>to education that sparks the fire in each individual's heart.",
-                vision_text_2: "We use cutting-edge AI, but people remain the protagonists.<br>Technology should be the soil that gently supports children's imagination.<br>That is the warm future we aim for.",
-                vision_handwritten: "Technology as wings for children's future.",
-                product_title: "Stories Connecting Hearts \"Lumisia\"",
-                product_subtitle: "Picture Books to Experience,<br>Not Just Read",
-                product_desc: "From a child's \"murmurs\" and \"favorite things\",<br>AI spins a story just for them.<br>As a fully launched, digital-native platform, Lumisia is globally available in multiple languages.<br>Not teaching answers, but sowing seeds of curiosity.<br>Lumisia is a partner enriching parent-child time worldwide.",
-                product_feature_1: "Story generation attuned to sensibilities",
-                product_feature_2: "Gentle design with safety guards",
-                product_feature_3: "Experience the joy of shaping imagination",
-                product_cta: "Visit Lumisia",
-                team_title: "Meet Our Team",
+                
+                vision_title: "Not a Tool, but an Approachable Partner",
+                vision_text_1: "Generative AI is powerful, but in its raw form, it can feel cold and inaccessible.<br>By using approachable \"characters\" as our interface,<br>we transform AI from a mere tool into a \"partner\"—one that children open up to and adults can comfortably rely on.",
+                vision_text_2: "Lumisia (B2C) draws out children's curiosity and thinks alongside them.<br>Lumisia for Business (B2B) gives a voice to facility and regional mascots, solving labor shortages and inbound tourism challenges.<br>We implement advanced AI into society in the gentlest, most natural way possible.",
+                vision_handwritten: "Technology as a guide for everyone.",
+                
+                b2b_title: "AI Customer Service Platform for Enterprise & Public Sectors<br>Lumisia for Business",
+                b2b_subtitle: "Your Official Characters as<br>Multilingual Guides",
+                b2b_desc: "Expand your facility's existing characters into AI guides capable of speaking 20+ languages, without altering their core identity.<br>Integrates station maps, delay info, and tenant data via RAG for precise, location-specific guidance.",
+                b2b_feature_1: "No app required. Instantly launches via QR code on smartphones",
+                b2b_feature_2: "Built-in anti-hallucination features redirecting to human staff when unsure",
+                b2b_feature_3: "Simultaneously solves labor shortages and inbound support challenges",
+                b2b_cta: "Visit B2B Site",
+                b2b_contact_cta: "Consultation",
+                
+                b2c_title: "Parent-Child AI Friend Platform<br>Lumisia",
+                b2c_subtitle: "Expanding from Passions:<br>An AI Friend Platform for Kids",
+                b2c_desc: "AI generates personalized stories and learning experiences from what a child loves.<br>Over 39 specialized AI friends nurture critical thinking through English, Math, Programming, and Emotional Care.",
+                b2c_feature_1: "Socratic method: asking questions instead of giving answers",
+                b2c_feature_2: "Parental safety guards and screen time management",
+                b2c_feature_3: "Digital-native platform deployed globally",
+                b2c_cta: "Explore Lumisia",
+                
+                startup_label: "Global Support",
+                startup_title: "Startup Programs & Partners",
+                startup_desc: "Lumisia's advanced AI infrastructure and business expansion are supported by global tech programs.",
+                startup_nvidia: "NVIDIA Inception",
+                startup_nvidia_desc: "Support for advanced generative AI development",
+                startup_google: "Google for Startups",
+                startup_google_desc: "Global business growth support",
+                startup_aws: "AWS Activate",
+                startup_aws_desc: "Scalable cloud infrastructure support",
+                
+                tech_label: "TECHNOLOGY",
+                tech_title: "Advanced Technology Supporting Public Infrastructure",
+                tech_desc: "Easy for anyone to use, yet secure enough for public spaces.<br>We utilize a tech stack that balances intuitive UX with a robust backend.",
+                tech_tag_lang: "Multilingual (20+ languages)",
+                tech_tag_hallucination: "Anti-Hallucination Features",
+                tech_tag_safety: "Multi-layered Safety Guards",
+                tech_tag_qr: "Instant QR Launch (No App)",
+                
+                team_title: "Our Team",
+                team_desc: "A lean team realizing rapid social implementation through scalable infrastructure development and intuitive experience design.",
                 team_member1_name: "Taketo Tanaka",
-                team_member1_role: "Founder & CEO",
-                team_member1_bio: "M.Eng. from Tokyo Institute of Technology. A specialist in AI and Software Engineering. Founded EISOL as a tech startup to pioneer EdTech innovation through Generative AI. Leading the end-to-end development of Lumisia.",
-                team_linkedin: "LinkedIn Profile",
-                tech_title: "Technology for Watching Over",
-                tech_desc: "To deliver \"personal teachers\" and \"magical picture books\" to children worldwide.<br>Leveraging Google Cloud (Vertex AI, GKE),<br>we build safe, uninterrupted, warm connections.",
-                tech_tag_1: "Google Cloud",
-                tech_tag_2: "Safe AI",
-                tech_tag_3: "Personalized",
-                tech_tag_4: "Scalability",
-                footer_company: "Operated by EISOL LLC",
+                team_member1_role: "Founder / CEO & CTO",
+                team_member1_bio: "Founded EISOL to solve social issues using generative AI. Leads all AI infrastructure and cloud development for Lumisia.",
+                team_linkedin: "LinkedIn",
+                
                 company_title: "Company Overview",
                 company_name_label: "Company Name",
                 company_name_value: "EISOL LLC",
@@ -699,16 +878,17 @@
                 company_rep_value: "Taketo Tanaka",
                 company_loc_label: "Location",
                 company_loc_value: "5-18-1 Nakanokamicho, Hachioji, Tokyo",
-                company_product_label: "Key Product",
-                company_product_desc: 'Story Generation AI Platform <a href="https://lumisia.world" target="_blank" style="color: var(--primary);">Lumisia</a>',
-                company_phone_label: "Phone",
-                company_phone_value: "070-1480-3872",
-                contact_title: "Contact",
-                contact_text: "Please feel free to contact us for interview requests or partnership consultations.",
-                contact_btn: "Send Email",
+                company_product_label: "Key Business",
+                
+                contact_title: "Contact Us",
+                contact_text: "Please contact us for interviews, proof-of-concept tests, or partnership inquiries.",
+                contact_btn_general: "General Inquiry",
+                contact_btn_biz: "B2B Consultation",
+                
                 footer_privacy: "Privacy Policy",
                 footer_terms: "Terms of Service",
-                footer_tokutei: "Specified Commercial Transactions Law"
+                footer_tokutei: "Legal Notice",
+                footer_company: "Operated by EISOL LLC"
             }
         };
 
@@ -738,11 +918,10 @@
             }
         }
 
-        // Default to English on page load
+        // Default to Japanese on page load
         window.addEventListener('DOMContentLoaded', () => {
-            setLanguage('en');
+            setLanguage('ja');
         });
     </script>
 </body>
-
 </html>
